@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    @yield('sidebar')
     @yield('contenido')
 </body>
 {{-- @vite(['resources/js/app.js']) --}}
