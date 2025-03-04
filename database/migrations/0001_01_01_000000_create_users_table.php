@@ -14,11 +14,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('last_name');
+            $table->timestamp('fecha_nacimiento');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('rol', ['caja', 'contador', 'administrador'])->default('caja'); // Columna `rol` con opciones específicas
+            $table->enum('estado',['activo','inactivo'])->default('activo'); 
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamps(); // Esto ya incluye `created_at` y `updated_at`
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

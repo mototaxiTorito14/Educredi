@@ -87,7 +87,7 @@ body {
 
 .login {
     width: 25%;
-    height: 60%;
+    height: auto;
     background-color: var(--background-form);
     margin-top: 80px;
     border-radius: 15px;
@@ -111,10 +111,14 @@ body {
 .login-form {
     width: 100%;
 }
+.titulo_login{
+    width: 100%;
+    text-align: center;
+}
 
 .login-form h2 {
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--color-font-form);
     margin-bottom: 20px;
     justify-self: center;
@@ -160,18 +164,36 @@ body {
     font-size: 16px;
     font-weight: 500;
     border-radius: 4px;
-    margin-top: 3px;
     cursor: pointer;
+    margin-bottom: 35px;
+    margin-top: 10px;
     box-shadow: 0 10px 10px var(--sombra-login-form)
 }
 .login-button:hover{
     background-color: var(--color-boton);
 }
 
-.error-message {
-    display: none;
+.custom_error {
+    margin-top: 4px;    
     color: red;
-    font-size: 18px;
-    margin-left: auto;
+    font-size: 13px;
+    margin-left: 3px;
+}
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    
 }
 
