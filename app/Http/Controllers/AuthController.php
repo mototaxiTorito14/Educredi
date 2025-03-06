@@ -76,8 +76,8 @@ class AuthController extends Controller
                 }
             } else {
                 return back()->withErrors([
-                    'email' => 'Las credenciales no coinciden con nuestros registros.',
-                    'password' => 'Las credenciales no coinciden con nuestros registros.'
+                    'email' => 'Las credenciales no coinciden.',
+                    'password' => 'Las credenciales no coinciden.'
                 ]);
             }
         } catch (\Exception $e) {

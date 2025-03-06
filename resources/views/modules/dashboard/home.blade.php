@@ -4,6 +4,7 @@
 
 @section('css')
     @vite('resources/css/sidebar.css')
+    @vite('resources/css/container.css')
 @endsection
 
 @section('sidebar')
@@ -23,4 +24,7 @@
             @break
         @default
     @endswitch
+@endsection
+@section('js')
+    @vite('resources/js/app.js')
 @endsection

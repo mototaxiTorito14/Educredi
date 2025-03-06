@@ -1,0 +1,50 @@
+:root{
+    --tittle-column:#498629d2;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main-content {
+    margin-left: 180px; 
+    padding: 20px;
+    margin-top: 70px;
+    flex-grow: 1;
+    background-color: var(--background); 
+}
+
+
+/* Cambiar el color de fondo de las cabeceras */
+#mitabla th {
+    background-color: var(--tittle-column);
+    color: white;
+}
+
+/* Cambiar el color de las filas al pasar el cursor sobre ellas */
+#mitabla tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Establecer el borde de las celdas */
+#mitabla th, #mitabla td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Personalizar las filas alternadas */
+#mitabla tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Cambiar el color de la paginación */
+.dataTables_paginate .paginate_button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background-color: #0056b3;
+}
+

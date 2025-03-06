@@ -10,41 +10,51 @@
     <img src="{{ asset('img/logoeducredi.jpeg') }}" alt="Logo" class="logo-img">
 
 
-    <ul>
+    <ul class="menu">
         <!-- Menú principal que aparece para todos los usuarios -->
-   
 
         <!-- Menú exclusivo para el administrador -->
-        @if(Auth::check())
-        @switch(Auth::user()->rol)
-            @case('administrador')
-                <li><a href=""><i class="fa-solid fa-hotel"></i> <span>Inicio</span></a></li>
-                <li><a href=""><i class="fa-regular fa-pen-to-square"></i> <span>Check-In<br>Check-Out</span></a></li>
-                <li><a href=""><i class="fa-solid fa-coins"></i> <span>Caja Diaria</span></a></li>
+        @if (Auth::check())
+            @switch(Auth::user()->rol)
+                @case('administrador')
+                    <li class="menu-item menu-item-static"><a href="" class="menu-link"><i class="fa-solid fa-hotel"></i>
+                            <span>Inicio</span></a></li>
+                    <li class="menu-item menu-item-static"> <a href="" class="menu-link"><i class="fa-regular fa-pen-to-square"></i>
+                            <span>Check-In<br>Check-Out</span></a>
+                    </li>
+                    <li class="menu-item menu-item-static"><a href="" class="menu-link"><i class="fa-solid fa-coins"></i> <span>Caja
+                                Diaria</span></a></li>
                 @break
-    
-            @case('caja')
-                <li><a href=""><img src="{{ asset('img/icon-caja.svg') }}" alt=""> <span>Caja</span></a></li>
-                <li><a href="{{ route('caja') }}"><i class="fa-solid fa-coins"></i> <span>Caja Diaria</span></a></li>
-        
-                @break
-    
-            @case('contador')
-                <li><a href=""><i class="fa-solid fa-hotel"></i> <span>Inicio</span></a></li>
 
+                @case('caja') 
+                    <li class="menu-item menu-item-static"><a href="" class="menu-link"><img src="{{asset('img/icon-caja.svg')}}" alt=""><span>Caja</span></a>
+                    </li>
+                    <li class="menu-item menu-item-dropdown">
+                        <a href="#" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Prestamos</span> <span class="arrow">></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="#" class="sub-menu-link">klk</a></li>
+                            <li><a href="#" class="sub-menu-link">klk</a></li>
+                            <li><a href="#" class="sub-menu-link">klk</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item menu-item-static"><a href="" class="menu-link"> <span>Caja
+                                diaria</span></a></li>
                 @break
-        @endswitch
-    @endif
+            @endswitch
+        @endif
 
         <!-- Línea divisoria -->
-            
-            <!-- Opción de cerrar sesión visible para todos -->
+
+        <!-- Opción de cerrar sesión visible para todos -->
     </ul>
-    <li class="cerrarsesion" id="cerrarsesion">
+    <li class="menu-item menu-item-static" id="cerrarsesion">
         <hr class="separate-line">
-        
-        <a href="{{route('logout')}}">
-            <i class="fa-solid fa-right-to-bracket"></i><span>Cerrar Sesión</span>
+
+        <a  class="menu-link" href="{{ route('logout') }}" >
+            <img src="{{asset('img/icon-cerrarsesion.svg')}}" alt=""><span>Cerrar Sesión</span>
         </a>
     </li>
 </div>

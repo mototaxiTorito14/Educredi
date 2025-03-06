@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js','resources/css/login.css',
-                'resources/css/sidebar.css'],
+                'resources/css/sidebar.css','resources/css/datatable.css'],
             refresh: true,
         }),
         tailwindcss(),
