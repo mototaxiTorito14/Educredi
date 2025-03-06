@@ -11,38 +11,39 @@ class AuthController extends Controller
 {
 
     public function login()
-    {
-        try {
-            // Verifica si el usuario ya está autenticado
-            if (Auth::check()) {
-                // Redirige al usuario a su página según el rol
-                $user = Auth::user();
-                switch ($user->rol) {
-                    case 'administrador':
-                        return redirect()->route('home');
-                    case 'caja':
-                        return redirect()->route('caja');
-                    case 'contador':
-                        return redirect()->route('contador');
-                    default:
-                        // En caso de un rol no válido, se puede redirigir al login
-                        return redirect()->route('login');
-                }
+{
+    try {
+        // Verifica si el usuario ya está autenticado
+        if (Auth::check()) {
+            // Obtiene el usuario autenticado
+            $user = Auth::user();
+
+            // Redirige al usuario según su rol
+            switch ($user->rol) {
+                case 'administrador':
+                    return redirect()->route('home');
+                case 'caja':
+                    return redirect()->route('caja');
+                case 'contador':
+                    return redirect()->route('contador');
+                default:
+                    // Si el rol no es válido, redirige al login
+                    return redirect()->route('login');
             }
-    
-            // Si no está autenticado, muestra la vista del login
-            return view('modules/auth/login');
-        } catch (\Exception $e) {
-            // Aquí puedes manejar la excepción
-            // Por ejemplo, loguear el error y redirigir al login
-            Log::error('Error al verificar o redirigir al usuario: ' . $e->getMessage());
-            
-            // Redirige al login con un mensaje de error si algo sale mal
-            return redirect()->route('login')->withErrors(['error' => 'Ocurrió un error inesperado.']);
         }
+
+        // Si no está autenticado, muestra la vista de login
+        return view('modules/auth/login');
+    } catch (\Exception $e) {
+        // Maneja cualquier error que ocurra durante la autenticación
+        Log::error('Error al verificar o redirigir al usuario: ' . $e->getMessage());
+
+        // Redirige al login con un mensaje de error si algo sale mal
+        return redirect()->route('login')->withErrors(['error' => 'Ocurrió un error inesperado.']);
     }
-    
-    
+}
+
+
 
 
     public function loggear(Request $request)
@@ -90,22 +91,32 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();  // Cierra la sesión del usuario
-        $request->session()->invalidate();  // Invalida la sesión
-        $request->session()->regenerateToken();  // Regenera el token CSRF
-
-        return redirect()->route('login');  // Redirige al login
+        // Cierra la sesión del usuario
+        Auth::logout();
+        
+        // Invalida la sesión y regenera el token CSRF
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    
+        // Redirige al login
+        return redirect()->route('login');
     }
+    
 
     public function home()
     {
-        return view('modules/dashboard/home_admin');
+        $rol = Auth::user()->rol; // Obtener el rol del usuario autenticado
+        return view('modules.dashboard.home')->with('rol', $rol); // Pasar el rol a la vista
     }
     public function caja()
     {
-        return view('modules/dashboard/home_caja');
+        $rol = Auth::user()->rol;
+        return view('modules.dashboard.home')->with('rol', $rol);
     }
-    public function contador(){
-        return view('modules/dashboard/home');
+
+    public function contador()
+    {
+        $rol = Auth::user()->rol;
+        return view('modules.dashboard.home')->with('rol', $rol);
     }
 }

@@ -14,14 +14,13 @@ class Roles
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $rol)
+    public function handle(Request $request, Closure $next, $role)
     {
-        // Verifica si el usuario está autenticado y tiene el rol necesario
-        if (!Auth::check() || Auth::user()->rol !== $rol) {
-            // Si no tiene el rol adecuado, redirige a la página anterior (o a una ruta predeterminada)
-            return redirect()->to(url()->previous());  // Redirige a la página donde el usuario estaba
+        // Verificamos que el usuario esté autenticado y tenga el rol adecuado
+        if (Auth::check() && Auth::user()->rol === $role) {
+            return $next($request);  // Si el rol es correcto, seguimos con la solicitud
         }
 
-        return $next($request);
+        return redirect()->route('login');  // Si no tiene el rol adecuado, redirigimos al login
     }
 }
