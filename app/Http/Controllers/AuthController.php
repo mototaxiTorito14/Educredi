@@ -5,14 +5,44 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class AuthController extends Controller
 {
-    
+
     public function login()
     {
-        return view('modules/auth/login');
+        try {
+            // Verifica si el usuario ya está autenticado
+            if (Auth::check()) {
+                // Redirige al usuario a su página según el rol
+                $user = Auth::user();
+                switch ($user->rol) {
+                    case 'administrador':
+                        return redirect()->route('home');
+                    case 'caja':
+                        return redirect()->route('caja');
+                    case 'contador':
+                        return redirect()->route('contador');
+                    default:
+                        // En caso de un rol no válido, se puede redirigir al login
+                        return redirect()->route('login');
+                }
+            }
+    
+            // Si no está autenticado, muestra la vista del login
+            return view('modules/auth/login');
+        } catch (\Exception $e) {
+            // Aquí puedes manejar la excepción
+            // Por ejemplo, loguear el error y redirigir al login
+            Log::error('Error al verificar o redirigir al usuario: ' . $e->getMessage());
+            
+            // Redirige al login con un mensaje de error si algo sale mal
+            return redirect()->route('login')->withErrors(['error' => 'Ocurrió un error inesperado.']);
+        }
     }
+    
+    
 
 
     public function loggear(Request $request)
@@ -22,26 +52,26 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => $request->password,
             ];
-    
+
             if (Auth::attempt($credenciales)) {
                 $user = Auth::user();
-    
+
                 if ($user->estado === 'activo') {
-                    
+
                     switch ($user->rol) {
                         case 'administrador':
-                            return to_route('home'); 
+                            return to_route('home');
                         case 'caja':
-                            return to_route('caja.dashboard'); 
+                            return to_route('caja');
                         case 'contador':
-                            return to_route('contador.dashboard'); 
+                            return to_route('contador');
                         default:
                             return to_route('login');
                     }
                 } else {
                     Auth::logout();
                     session()->flash('error', 'Tu cuenta ha sido desactivada.');
-                    return redirect()->route('login'); 
+                    return redirect()->route('login');
                 }
             } else {
                 return back()->withErrors([
@@ -51,16 +81,31 @@ class AuthController extends Controller
             }
         } catch (\Exception $e) {
             Log::error('Error en el proceso de autenticación: ' . $e->getMessage());
-    
+
             return back()->withErrors([
                 'error' => 'Ocurrió un error inesperado. Por favor, intente nuevamente más tarde.'
             ]);
         }
     }
-    
+
+    public function logout(Request $request)
+    {
+        Auth::logout();  // Cierra la sesión del usuario
+        $request->session()->invalidate();  // Invalida la sesión
+        $request->session()->regenerateToken();  // Regenera el token CSRF
+
+        return redirect()->route('login');  // Redirige al login
+    }
 
     public function home()
     {
+        return view('modules/dashboard/home_admin');
+    }
+    public function caja()
+    {
+        return view('modules/dashboard/home_caja');
+    }
+    public function contador(){
         return view('modules/dashboard/home');
     }
 }

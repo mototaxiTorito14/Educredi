@@ -1,11 +1,37 @@
 {
+  "public/fonts/Poppins/Poppins-Bold.ttf": {
+    "file": "assets/Poppins-Bold-qTAUjFF7.ttf",
+    "src": "public/fonts/Poppins/Poppins-Bold.ttf"
+  },
+  "public/fonts/Poppins/Poppins-Light.ttf": {
+    "file": "assets/Poppins-Light-DT6-CsId.ttf",
+    "src": "public/fonts/Poppins/Poppins-Light.ttf"
+  },
+  "public/fonts/Poppins/Poppins-Medium.ttf": {
+    "file": "assets/Poppins-Medium-Cxde2ZoM.ttf",
+    "src": "public/fonts/Poppins/Poppins-Medium.ttf"
+  },
+  "public/fonts/Poppins/Poppins-Regular.ttf": {
+    "file": "assets/Poppins-Regular-CTKNfV9P.ttf",
+    "src": "public/fonts/Poppins/Poppins-Regular.ttf"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-j4ZJ5ZFU.css",
+    "file": "assets/app-BSyhC3ED.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/css/login.css": {
+    "file": "assets/login-B6-81J9z.css",
+    "src": "resources/css/login.css",
+    "isEntry": true
+  },
+  "resources/css/sidebar.css": {
+    "file": "assets/sidebar-DR8FsXqm.css",
+    "src": "resources/css/sidebar.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
-    "file": "assets/app-GjF6MH2R.js",
+    "file": "assets/app-BT6TD7Xk.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
