@@ -1,13 +1,13 @@
 import './bootstrap';
-import $ from 'jquery'; // Importar jQuery
-import 'datatables.net-dt'; 
+import $, { event } from 'jquery'; // Importar jQuery
+import 'datatables.net-dt';
 import 'datatables.net-colreorder';
 import 'datatables.net-keytable-dt';
 import 'datatables.net-scroller-dt';
 
 // Inicializar DataTables
-$(document).ready(function() {
-    $('#mitabla').DataTable({
+$(document).ready(function () {
+    const table = $('#mitabla').DataTable({
         "paging": true,  // Habilita la paginación
         "lengthChange": true,  // Permite cambiar la cantidad de registros por página
         "searching": true,  // Habilita la búsqueda
@@ -15,7 +15,7 @@ $(document).ready(function() {
         "info": true,  // Muestra información sobre los registros
         "autoWidth": false,  // Desactiva el ajuste automático de anchos de columnas
         "responsive": true,  // Hace la tabla responsive
-        "colReorder":true,
+        "colReorder": true,
         "language": {
             "decimal": ",",  // Configuración del separador decimal
             "thousands": ".",  // Configuración del separador de miles
@@ -32,61 +32,92 @@ $(document).ready(function() {
                 "last": "Última"  // Botón para ir a la última página
             },
             "aria": {
-                "sortAscending": ": activar para ordenar la columna de manera ascendente",  
-                "sortDescending": ": activar para ordenar la columna de manera descendente"  
+                "sortAscending": ": activar para ordenar la columna de manera ascendente",
+                "sortDescending": ": activar para ordenar la columna de manera descendente"
             }
         },
-        "lengthMenu": [5, 10, 25, 50, 100], 
-        "pageLength": 5 
+        "lengthMenu": [5, 10, 25, 50, 100],
+        "pageLength": 5
     });
-});
 
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Seleccionamos todos los enlaces dentro de la clase 'menu'
-        const menuItems = document.querySelectorAll('.menu > a');
-
-        // Iteramos sobre cada uno de los elementos 'a'
-        menuItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Seleccionamos el siguiente elemento hermano (el <ul> con las opciones)
-                const submenu = item.nextElementSibling;
-
-                // Si el submenu está visible, lo ocultamos; si está oculto, lo mostramos
-                if (submenu.style.display === 'none' || submenu.style.display === '') {
-                    submenu.style.display = 'block'; // Mostrar
-                } else {
-                    submenu.style.display = 'none'; // Ocultar
+    //funcion para abrir el modal al hacer clic en una fila de la tabla
+    $(document).ready(function() {
+        const table = $('#mitabla').DataTable();
+    
+        $('#mitabla tbody').on('click', 'tr', function () {
+            $('#myModal').fadeIn();  
+    
+            $('.close-btn').on('click', function () {
+                $('#myModal').fadeOut(); 
+            });
+    
+            $(window).on('click', function(event) {
+                if ($(event.target).is('#myModal')) {
+                    $('#myModal').fadeOut();
                 }
             });
         });
     });
-const menUItemDropDown = document.querySelectorAll('.menu-item-dropdown');
+});    
 
-menUItemDropDown.forEach((menuItem)=>{
-    menuItem.addEventListener('click',()=>{
-        const subMenu = menuItem.querySelector('.sub-menu');
-        const isActive = menuItem.classList.toggle('sub-menu-toggle');
 
-        if (subMenu) {
-            if(isActive){
-                subMenu.style.height = `${subMenu.scrollHeight + 6}px`;
-                subMenu.style.paging = '0.2rem 0';
-            }else{
+// Funcion para desplegar el subMenu del sidebar
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll('.menu-item-dropdown');
+
+    menuItems.forEach(item => {
+        const link = item.querySelector('.menu-link'); 
+        const subMenu = item.querySelector('.sub-menu'); 
+
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); 
+
+            const isActive = item.classList.toggle('sub-menu-toggle');
+
+            if (isActive) {
+                subMenu.style.height = `${subMenu.scrollHeight + 6}px`; 
+                subMenu.style.padding = '0.2rem 0'; 
+            } else {
                 subMenu.style.height = '0';
-                subMenu.style.paging = '0';
+                subMenu.style.padding = '0';
             }
-            
-        }
-        menUItemDropDown.forEach((item)=>{
-            if (item !== menuItem) {
-                const otherSubmenu = item.querySelector('.sub-menu');
-                if(otherSubmenu){
-                    item.classList.remove('sub-menu-toggle');
-                    otherSubmenu.style.height = '0';
-                    otherSubmenu.style.paging = '0';
+
+            menuItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherSubMenu = otherItem.querySelector('.sub-menu');
+                    if (otherSubMenu) {
+                        otherItem.classList.remove('sub-menu-toggle');
+                        otherSubMenu.style.height = '0';
+                        otherSubMenu.style.padding = '0';
+                    }
                 }
-            }
-        })
-    })
-})
+            });
+        });
+    });
+});
+
+//abrir modal con boton
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("openModalBtn");
+var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+btn.onclick = function (event) {
+    event.preventDefault();
+    modal.style.display = "block";
+}
+
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        modal.style.display = "none";
+    }
+});

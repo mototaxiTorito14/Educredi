@@ -47,9 +47,21 @@ body {
     width: 90px; 
     height: auto;
     display: block; 
-    margin: 15px 10px 0 8px;
+    margin: 15px 10px 0px 8px;
     border-radius: 50%;
     object-fit: cover;
+}
+.sidebar h3{
+    color: var(--color-font);
+    text-align: center;
+    margin: 20px 10px 10px 10px;
+    font-size: 16px;
+    
+}
+.sidebar hr{
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.73);
+    margin-bottom: 15px;
 }
 .menu{
     width: 100%;
@@ -103,7 +115,7 @@ body {
     text-decoration: none;
     padding: 0.55rem 0.5rem;
     color: var(--color-font);
-    margin-left: -10px;
+    margin-left: 25px;
     margin-top: 5px;
     border-radius: 5px;
 }
@@ -115,7 +127,7 @@ body {
     position: absolute;
     height: 100%;
     width: 0.07rem;
-    margin-left: -1.2rem;
+    margin-left: 20px;
     background-color: #fff;
 }
 .sidebar::-webkit-scrollbar {
@@ -138,3 +150,4 @@ body {
     border: 1px solid white;
     margin-bottom: 15px;
 }
+

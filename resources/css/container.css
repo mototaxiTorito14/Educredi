@@ -1,5 +1,8 @@
+
+/* Estilos Generales */
 :root{
     --tittle-column:#498629d2;
+    --color-base:#498629;
 }
 .container {
     display: flex;
@@ -47,4 +50,72 @@
 .dataTables_paginate .paginate_button:hover {
     background-color: #0056b3;
 }
+table.dataTable tbody tr:hover {
+    cursor: pointer;
+}
+
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* Contenido del Modal */
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: auto;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+
+  /* El botón de cerrar */
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+/* Estilos Contador */
+
+.btn-clientes a{
+    width: 12%;
+    color: white;
+    text-decoration: none;
+    background-color: var(--tittle-column);
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+.btn-clientes a img{
+    width: 30px;
+    margin-right: 10px;
+}
+.btn-clientes a:hover{
+    background-color: var(--color-base);
+}
+
+
 

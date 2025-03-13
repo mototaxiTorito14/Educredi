@@ -8,6 +8,9 @@
 
 <div class="sidebar">
     <img src="{{ asset('img/logoeducredi.jpeg') }}" alt="Logo" class="logo-img">
+    <h3 class="logo-text">EDUCREDI RURAL
+        S.A DE C.V</h3>
+        <hr class="separate-line">
 
 
     <ul class="menu">
@@ -34,6 +37,23 @@
 
                         <ul class="sub-menu">
                             <li><a href="#" class="sub-menu-link">klk</a></li>
+                            <li><a href="#" class="sub-menu-link">klk</a></li>
+                            <li><a href="#" class="sub-menu-link">klk</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item menu-item-static"><a href="" class="menu-link"> <span>Caja
+                                diaria</span></a></li>
+                @break
+                @case('contador') 
+                    <li class="menu-item menu-item-static"><a href="{{route('contador')}}" class="menu-link"><img src="{{asset('img/icon-clientes.svg')}}" alt=""><span>Clientes</span></a>
+                    </li>
+                    <li class="menu-item menu-item-dropdown">
+                        <a href="javascript:void(0);" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Prestamos</span> <span class="arrow">></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="" class="sub-menu-link">Grupos</a></li>
                             <li><a href="#" class="sub-menu-link">klk</a></li>
                             <li><a href="#" class="sub-menu-link">klk</a></li>
 

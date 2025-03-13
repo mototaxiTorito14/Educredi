@@ -14,7 +14,7 @@
 @section('contenido')
     @switch($rol)
         @case('contador')
-            @include('modules.partial.prueba_contador')
+            @include('modules.partial.clientes')
             @break
         @case('administrador')
             @include('modules.partial.prueba_administrador')
