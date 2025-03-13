@@ -3,6 +3,7 @@
 :root{
     --tittle-column:#498629d2;
     --color-base:#498629;
+    --color-eliminar:#E03838;
 }
 .container {
     display: flex;
@@ -117,5 +118,32 @@ table.dataTable tbody tr:hover {
     background-color: var(--color-base);
 }
 
+/* Estilos grupos contador */
+.btn-grupos a{
+    width: 12%;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+.btn-grupos a span{
+    text-align: center;
+    justify-self: center;
 
-
+}
+.btn-eliminar{
+    background-color: var(--color-eliminar);
+}
+.btn-agregar{
+    background-color: var(--color-base);
+}
+.btn-agregar:hover{
+    background-color: var(--tittle-column);
+}
+.btn-eliminar:hover{
+    background-color: #c12c2c;
+}

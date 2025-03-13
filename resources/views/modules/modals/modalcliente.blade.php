@@ -243,7 +243,14 @@
         font-size: 16px;
 
     }
-
+    .input-group select {
+        border: none;
+        background: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        
+    }
     .input-group .label1 {
         display: flex;
         align-items: center;

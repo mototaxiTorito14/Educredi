@@ -42,9 +42,9 @@ $(document).ready(function () {
 
     //funcion para abrir el modal al hacer clic en una fila de la tabla
     $(document).ready(function() {
-        const table = $('#mitabla').DataTable();
+        const table = $('.tablaClientes').DataTable();
     
-        $('#mitabla tbody').on('click', 'tr', function () {
+        $('.tablaClientes tbody').on('click', 'tr', function () {
             $('#myModal').fadeIn();  
     
             $('.close-btn').on('click', function () {

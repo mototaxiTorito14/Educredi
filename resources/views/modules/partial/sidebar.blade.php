@@ -53,15 +53,18 @@
                         <a href="javascript:void(0);" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Prestamos</span> <span class="arrow">></span></a>
 
                         <ul class="sub-menu">
-                            <li><a href="" class="sub-menu-link">Grupos</a></li>
-                            <li><a href="#" class="sub-menu-link">klk</a></li>
-                            <li><a href="#" class="sub-menu-link">klk</a></li>
+                            <li><a href="{{route('grupos')}}" class="sub-menu-link">Grupos</a></li>
+                            <li><a href="#" class="sub-menu-link">Credito Individual</a></li>
+                            <li><a href="#" class="sub-menu-link">Cambiar datos de prestamo</a></li>
 
                         </ul>
                     </li>
 
-                    <li class="menu-item menu-item-static"><a href="" class="menu-link"> <span>Caja
-                                diaria</span></a></li>
+                    <li class="menu-item menu-item-static"><a href="{{route('mantenimientoAsesores')}}" class="menu-link"><img src="{{asset('img/icon-mantenimiento.svg')}}" alt=""> <span>Mantenimiento de asesor</span></a></li>
+
+                    
+                    <li class="menu-item menu-item-static"><a href="" class="menu-link"><img src="{{asset('img/icon-tecnico.svg')}}" alt=""> <span>Tecnico</span></a></li>
+
                 @break
             @endswitch
         @endif

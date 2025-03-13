@@ -119,4 +119,32 @@ class AuthController extends Controller
         $rol = Auth::user()->rol;
         return view('modules.dashboard.home')->with('rol', $rol);
     }
+    public function grupos()
+    {
+        $rol = Auth::user()->rol;
+    
+        // Verificar si el rol es 'contador'
+        if ($rol !== 'contador') {
+            // Si no es contador, redirigir o mostrar un mensaje de error
+            return redirect()->route('home')->with('error', 'No tienes acceso a esta sección.');
+        }
+    
+        // Si el rol es 'contador', cargar la vista
+        return view('modules.dashboard.grupos')->with('rol', $rol);
+    }
+   
+    public function mantenimientoAsesores(){
+        $rol = Auth::user()->rol;
+    
+        // Verificar si el rol es 'contador'
+        if ($rol !== 'contador') {
+            // Si no es contador, redirigir o mostrar un mensaje de error
+            return redirect()->route('home')->with('error', 'No tienes acceso a esta sección.');
+        }
+    
+        // Si el rol es 'contador', cargar la vista
+        return view('modules.dashboard.mantenimientoasesor')->with('rol', $rol);
+    }
+
+    
 }

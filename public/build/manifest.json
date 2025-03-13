@@ -16,22 +16,27 @@
     "src": "public/fonts/Poppins/Poppins-Regular.ttf"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BSyhC3ED.css",
+    "file": "assets/app-d3qMeiKJ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/css/datatable.css": {
+    "file": "assets/datatable-UhI0Byt5.css",
+    "src": "resources/css/datatable.css",
+    "isEntry": true
+  },
   "resources/css/login.css": {
-    "file": "assets/login-B6-81J9z.css",
+    "file": "assets/login-CbW2B5WM.css",
     "src": "resources/css/login.css",
     "isEntry": true
   },
   "resources/css/sidebar.css": {
-    "file": "assets/sidebar-DR8FsXqm.css",
+    "file": "assets/sidebar-Ce-sE0xT.css",
     "src": "resources/css/sidebar.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-BT6TD7Xk.js",
+    "file": "assets/app-B0ZG8uy5.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

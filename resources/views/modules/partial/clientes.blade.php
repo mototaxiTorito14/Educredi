@@ -9,7 +9,7 @@
                 
 
             </div>
-            <table id="mitabla" class="table table-striped" style="width:100%">
+            <table id="mitabla" class="table table-striped tablaClientes" style="width:100%">
                 
                 <thead>
                     <tr>

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="main-content">
         <div class="container mt-4">
-            <h1>Mantenimiento de Grupos</h1>
+            <h1>Mantenimiento de Asesores</h1>
             <div class="btn-grupos" style="display: flex; margin-bottom: 10px; margin-top: 10px; margin-left: 10px;">
                 <a href="" id="openModalBtn" class="btn-agregar" style="margin-right: 15px;"><span>Nuevo Grupo</span></a>
                 <a href="" id="openModalBtn" class="btn-eliminar"><span>Eliminar Grupo</span></a>
