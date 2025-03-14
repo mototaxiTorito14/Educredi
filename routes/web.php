@@ -16,6 +16,7 @@ Route::middleware('auth','prevent.back.history')->group(function () {
     Route::get('/clientes', [AuthController::class, 'contador'])->name('contador');
     Route::get('/grupos',[AuthController::class, 'grupos'])->name('grupos');
     Route::get('/asesores',[AuthController::class, 'mantenimientoAsesores'])->name('mantenimientoAsesores');
+    Route::get('reversiones',[AuthController::class, 'reverliquidacion'])->name('reverliquidacion');
 });
 
 Route::middleware('auth')->get('/logout', [AuthController::class, 'logout'])->name('logout');

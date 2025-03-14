@@ -147,3 +147,56 @@ table.dataTable tbody tr:hover {
 .btn-eliminar:hover{
     background-color: #c12c2c;
 }
+
+/* Estilos reversion liquidacion contador */
+.section{
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.382);
+    width: 70%;
+    justify-self: center;
+    margin-top: 100px;
+    background: #c1c0c0;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px 0px rgba(9, 72, 9, 0.308);
+}
+.section-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 45px;
+}
+.form-reversion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-reversion input{
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: #f1f1f1;
+}
+.section-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+.section-container2 select{
+    padding: 10px 18px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    margin-right: 30px;
+}
+.section-container2 a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: var(--color-base);
+}
+.section-container2 a:hover{
+    background-color: var(--tittle-column);
+}
