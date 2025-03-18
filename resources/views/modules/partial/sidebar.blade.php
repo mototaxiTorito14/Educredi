@@ -30,15 +30,14 @@
                 @break
 
                 @case('caja') 
-                    <li class="menu-item menu-item-static"><a href="" class="menu-link"><img src="{{asset('img/icon-caja.svg')}}" alt=""><span>Caja</span></a>
+                    <li class="menu-item menu-item-static"><a href="{{route('caja')}}" class="menu-link"><img src="{{asset('img/icon-caja.svg')}}" alt=""><span>Caja</span></a>
                     </li>
                     <li class="menu-item menu-item-dropdown">
-                        <a href="#" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Prestamos</span> <span class="arrow">></span></a>
+                        <a href="javascript:void(0);" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Prestamos</span> <span class="arrow">></span></a>
 
                         <ul class="sub-menu">
-                            <li><a href="#" class="sub-menu-link">klk</a></li>
-                            <li><a href="#" class="sub-menu-link">klk</a></li>
-                            <li><a href="#" class="sub-menu-link">klk</a></li>
+                            <li><a href="{{route('grupos')}}" class="sub-menu-link">Grupos</a></li>
+
 
                         </ul>
                     </li>

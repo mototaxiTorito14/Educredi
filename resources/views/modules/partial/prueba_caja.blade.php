@@ -2,7 +2,7 @@
 <div class="container">
     <div class="main-content">
         <div class="container mt-4">
-            <h1>Tabla con DataTables</h1>
+            <h1>Caja</h1>
             <table id="mitabla" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
