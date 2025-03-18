@@ -200,3 +200,63 @@ table.dataTable tbody tr:hover {
 .section-container2 a:hover{
     background-color: var(--tittle-column);
 }
+
+.form-container {
+    display: flex;
+    gap: 40px; /* Espacio entre columnas */
+}
+
+.campos-grupos {
+    display: flex;
+    margin-left: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.input-group input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+
+}
+.input-group select {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    
+}
+.input-group .label1 {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    padding: 10px 30px;
+    margin-right: 20px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px; /* Espacio entre el checkbox y el texto */
+    transform: scale(1.2); /* Ajusta el tamaño del checkbox si es necesario */
+}

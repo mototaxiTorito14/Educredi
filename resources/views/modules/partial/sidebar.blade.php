@@ -33,7 +33,7 @@
                     <li class="menu-item menu-item-static"><a href="" class="menu-link"><img src="{{asset('img/icon-caja.svg')}}" alt=""><span>Caja</span></a>
                     </li>
                     <li class="menu-item menu-item-dropdown">
-                        <a href="#" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Prestamos</span> <span class="arrow">></span></a>
+                        <a href="#" class="menu-link"><img src="{{asset('img/icon-prestamo.svg')}}" alt=""><span>Consulta movimientos</span> <span class="arrow">></span></a>
 
                         <ul class="sub-menu">
                             <li><a href="#" class="sub-menu-link">klk</a></li>
@@ -43,7 +43,7 @@
                         </ul>
                     </li>
 
-                    <li class="menu-item menu-item-static"><a href="" class="menu-link"> <span>Caja
+                    <li class="menu-item menu-item-static"><a href="consulta_movimientos" class="menu-link"> <span>Caja
                                 diaria</span></a></li>
                 @break
                 @case('contador') 
@@ -54,7 +54,7 @@
 
                         <ul class="sub-menu">
                             <li><a href="{{route('grupos')}}" class="sub-menu-link">Grupos</a></li>
-                            <li><a href="#" class="sub-menu-link">Credito Individual</a></li>
+                            <li><a href="{{route('creditos')}}" class="sub-menu-link">Credito Individual</a></li>
                             <li><a href="#" class="sub-menu-link">Cambiar datos de prestamo</a></li>
 
                         </ul>

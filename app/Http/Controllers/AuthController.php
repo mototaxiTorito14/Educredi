@@ -158,4 +158,13 @@ class AuthController extends Controller
         return view('modules.dashboard.reversionliquidacion')->with('rol', $rol);
     }
     
+    public function creditos(){
+        $rol = Auth::user()->rol;
+
+        if ($rol !== 'contador') {
+            return redirect()->route('home')->with('error', 'No tienes acceso a esta sección');
+        }
+        
+        return view('modules.dashboard.creditos')->with('rol', $rol);
+    }
 }
