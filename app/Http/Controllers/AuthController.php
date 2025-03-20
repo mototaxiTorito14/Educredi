@@ -124,7 +124,7 @@ class AuthController extends Controller
         $rol = Auth::user()->rol;
     
         // Verificar si el rol es 'contador'
-        if ($rol !== 'contador') {
+        if ($rol !== 'contador' && $rol !== 'caja') {
             // Si no es contador, redirigir o mostrar un mensaje de error
             return redirect()->route('home')->with('error', 'No tienes acceso a esta sección.');
         }
