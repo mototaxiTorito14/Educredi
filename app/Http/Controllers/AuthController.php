@@ -170,4 +170,17 @@ class AuthController extends Controller
         // Si el rol es 'contador', cargar la vista
         return view('modules.dashboard.desembolso')->with('rol', $rol);
     }
+
+    public function cambiardatos(){
+        $rol = Auth::user()->rol;
+    
+        // Verificar si el rol es 'contador'
+        if ($rol !== 'contador') {
+            // Si no es contador, redirigir o mostrar un mensaje de error
+            return redirect()->route('home')->with('error', 'No tienes acceso a esta sección.');
+        }
+    
+        // Si el rol es 'contador', cargar la vista
+        return view('modules.dashboard.cambiodatos')->with('rol', $rol);
+    }
 }

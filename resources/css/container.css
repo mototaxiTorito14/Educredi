@@ -208,7 +208,7 @@ table.dataTable tbody tr:hover {
 
 .fila {
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .columna2{
@@ -259,6 +259,13 @@ textarea {
     width: 40%;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.campo-verificar{
+    margin-left: -20px;
+    width: 100rem;
+    height: 100;
+
 }
 
 .container-select select{
@@ -328,6 +335,23 @@ textarea {
 /* Ícono */
 .btn-hecho i {
     font-size: 18px;
+}
+
+.btn-verificar {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 40px;
+    width: auto;
+    padding: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 14px; /* Fuente más pequeña */
+    border-radius: 6px; /* Bordes más pequeños */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Espacio entre ícono y texto */
 }
 
 .campos-desactivados input{
