@@ -1,6 +1,6 @@
 @extends('layouts/main')
 
-@section('titulo_pagina', 'Créditos')
+@section('titulo_pagina', 'Desembolso préstamo')
 
 @section('css')
     @vite('resources/css/sidebar.css')
@@ -12,7 +12,7 @@
 @endsection
 
 @section('contenido')
-   @include('modules.partial.creditoindividual')
+   @include('modules.partial.desembolsoprestamos')
 @endsection
 @section('js')
     @vite('resources/js/app.js')

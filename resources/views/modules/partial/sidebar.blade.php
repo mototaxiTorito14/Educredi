@@ -54,7 +54,7 @@
 
                         <ul class="sub-menu">
                             <li><a href="{{route('grupos')}}" class="sub-menu-link">Grupos</a></li>
-                            <li><a href="{{route('creditos')}}" class="sub-menu-link">Credito Individual</a></li>
+                            <li><a href="{{route('creditos')}}" class="sub-menu-link">Desembolso de préstamos</a></li>
                             <li><a href="#" class="sub-menu-link">Cambiar datos de prestamo</a></li>
 
                         </ul>
