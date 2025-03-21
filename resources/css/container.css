@@ -263,8 +263,9 @@ textarea {
 
 .campo-verificar{
     margin-left: -20px;
-    width: 100rem;
+    width: 80rem;
     height: 100;
+    margin-top: -40px;
 
 }
 
