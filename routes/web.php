@@ -19,6 +19,7 @@ Route::middleware('auth','prevent.back.history')->group(function () {
     Route::get('/reversiones',[AuthController::class, 'reverliquidacion'])->name('reverliquidacion');
     Route::get('/creditos',[AuthController::class,  'creditos'])->name('creditos');
     Route::get('/cambiardatos',[AuthController::class, 'cambiardatos'])->name('cambiardatos');
+    Route::get('/transferenciadecartera',[AuthController::class, 'transferenciadecartera'])->name('transferenciadecartera');
 });
 
 Route::middleware('auth')->get('/logout', [AuthController::class, 'logout'])->name('logout');
