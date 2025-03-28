@@ -122,7 +122,7 @@
         </div>
         <div class="fila" style="text-align: center; justify-content: center;">
             <button class="btn-hecho">
-                <i class="fa-solid fa-repeat"></i> <b>Transferir</b>
+                <i class="fa-solid fa-repeat"></i> <b>Transferir ya</b>
             </button>
         </div>
 
